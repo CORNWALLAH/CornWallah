@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Post Object Generator</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f1f5f9;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h2 {
+      color: #1e40af;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: 0.2s ease;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+
+    .button-group {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    button {
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .generate-btn {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .generate-btn:hover {
+      background-color: #1d4ed8;
+    }
+
+    .copy-btn {
+      background-color: #e2e8f0;
+      color: #1e293b;
+    }
+
+    .copy-btn:hover {
+      background-color: #cbd5e1;
+    }
+
+    pre {
+      background-color: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      border-radius: 0.5rem;
+      font-family: 'Courier New', monospace;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🌽 Wallah</h2>
+
+    <label for="title">Title</label>
+    <input type="text" id="title" placeholder="corn name ">
+
+    <label for="thumbnail">Thumbnail Image URL</label>
+    <input type="text" id="thumbnail" placeholder="e.g., https://image.com/corn.jpg">
+
+    <label for="link">Shortened link </label>
+    <input type="text" id="link" placeholder="e.g., https://example.com/corn-page">
+
+    <div class="button-group">
+      <button class="generate-btn" onclick="generatePost()">Generate Code</button>
+      <button class="copy-btn" onclick="copyCode()">Copy</button>
+    </div>
+
+    <pre id="output">// Output will appear here...</pre>
+  </div>
+
+  <script>
+    function generatePost() {
+      const title = document.getElementById('title').value.trim();
+      const thumbnail = document.getElementById('thumbnail').value.trim();
+      const link = document.getElementById('link').value.trim();
+
+      if (!title || !thumbnail || !link) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      const result = `, { title: "${title}", thumbnail: "${thumbnail}", link: "${link}" },`;
+      document.getElementById('output').textContent = result;
+    }
+
+    function copyCode() {
+      const output = document.getElementById('output').textContent;
+      if (output.trim() === '' || output.includes('copy code ')) {
+        alert("Nothing to copy yet!");
+        return;
+      }
+      navigator.clipboard.writeText(output).then(() => {
+        alert("Code copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
