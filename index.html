@@ -178,13 +178,33 @@
         font-size: 1rem;
       }
     }
+    .brand-link {
+  color: inherit; 
+  text-decoration: none; 
+  cursor: pointer; 
+  font-weight: bold; 
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.brand-link:hover,
+.brand-link:focus {
+  text-decoration: underline; 
+  color: #fffb11;
+  outline: none; 
+}
+
   </style>
 </head>
 <body>
   <header>
-    <div class="brand-title">
+  <div class="brand-title">
+    <a href="index.html" class="brand-link">
       <span>🌽</span>Corn Wallah
-    </div>
+    </a>
+  </div>
+  
     <div class="social-icons">
       <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       <a href="https://t.me/freekamaalhaix" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
