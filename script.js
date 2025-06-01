@@ -60,7 +60,7 @@ function renderPosts(filteredPosts, append = false) {
       <button class="copy-button">share</button>
     `;
 
-    
+    // Prevent navigation when clicking copy button and copy search URL
     const copyBtn = postCard.querySelector('.copy-button');
     copyBtn.onclick = (e) => {
       e.preventDefault();
@@ -104,6 +104,7 @@ loadMoreBtn.addEventListener('click', () => {
   handleSearch();
 });
 
+// Load search from URL or render all posts initially
 window.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const query = params.get('search');
