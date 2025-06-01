@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cornwallah</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Corn Wallah</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
     * {
       box-sizing: border-box;
     }
@@ -86,7 +87,7 @@
     }
 
     .post-card {
-      background: rgb(255, 255, 255);
+      background: #fff;
       border-radius: 0.75rem;
       box-shadow: 0 2px 8px rgba(252, 0, 0, 0.04);
       overflow: hidden;
@@ -94,6 +95,7 @@
       flex-direction: column;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-decoration: none;
+      color: inherit;
     }
 
     .post-card:hover {
@@ -113,6 +115,27 @@
       font-weight: 600;
       font-size: 1.125rem;
       color: #000000;
+    }
+
+    .copy-button {
+      background-color: #f03730;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 0.5rem 1rem 1rem 1rem;
+      align-self: flex-start;
+      transition: background-color 0.3s ease;
+    }
+
+    .copy-button:hover {
+      background-color: #da1b11;
+    }
+
+    .copy-button:active {
+      transform: scale(0.98);
     }
 
     .no-results {
@@ -167,23 +190,29 @@
       <a href="https://t.me/freekamaalhaix" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
     </div>
     <div class="search-container">
-      <input type="search" id="searchInput" placeholder="Search post no......" aria-label="Search posts" />
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search post no ..."
+        aria-label="Search posts"
+      />
     </div>
   </header>
 
   <main>
     <div class="posts-grid" id="postsGrid" aria-live="polite"></div>
-    <div class="no-results" id="noResults" style="display:none;">No posts found.</div>
+    <div class="no-results" id="noResults" style="display:none;">
+      No posts found.
+    </div>
     <div class="load-more-container">
       <button class="load-more-button" id="loadMoreBtn">Load More</button>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025CornWaah. All rights reserved.</p>
-    <p><a href="#" style="color: #f03730; text-decoration: underline;"></a></p>
+    <p>&copy; 2025 Corn Waah. All rights reserved.</p>
   </footer>
 
- <script src="script.js"></script
+  <script src="script.js"></script>
 </body>
 </html>
