@@ -57,7 +57,7 @@ function renderPosts(filteredPosts, append = false) {
     postCard.innerHTML = `
       <img src="${post.thumbnail}" alt="${post.title}" class="post-thumbnail" loading="lazy" />
       <div class="post-title">${post.title}</div>
-      <button class="copy-button">Copy Link</button>
+      <button class="copy-button">share</button>
     `;
 
     
